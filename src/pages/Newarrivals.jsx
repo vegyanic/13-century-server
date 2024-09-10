@@ -13,8 +13,8 @@ const Newarrival = () => {
   const [hoveredImage, setHoveredImage] = useState({});
 
   useEffect(() => {
-    const category = 'Eyewear'; 'Sungalsses';
-    const gender = 'Male'; 'Female';
+    const category = 'Eyewear'; 
+    const gender = 'Male'; 
     
 
     const fetchProducts = async () => {
