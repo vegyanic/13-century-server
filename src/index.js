@@ -14,6 +14,8 @@ import reportWebVitals from './reportWebVitals';
 import 'bootstrap/dist/js/bootstrap';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import AboutUs from './pages/aboutus';
+import Newarrival from './pages/Newarrivals';
+import bestseller from './pages/Bestseller';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
@@ -57,6 +59,14 @@ const NavRoutes = createBrowserRouter([
   {
     path: 'aboutus',
     element: <AboutUs />,
+  },
+  {
+    path: 'Newarrivals',
+    element: <Newarrival/>,
+  },
+  {
+    path: 'Bestseller',
+    element: <bestseller/>,
   },
   {
     path: '*',  // Fallback route

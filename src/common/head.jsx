@@ -49,11 +49,11 @@ const Header = () => {
                     <li><Link className="dropdown-item" to="/eyewear/womens">For Women</Link></li>
                   </ul>
                 </li>
-                {/* <li className="nav-item">
-                  <Link className="nav-link disabled" to="/pages/stores">Store Locator</Link>
-                </li> */}
                 <li className="nav-item">
-                  <Link className="nav-link " to="/Aboutus">About us</Link>
+                  <Link className="nav-link disabled" to="/pages/Newarrivals">New Arrivals</Link>
+                </li>
+                <li className="nav-item">
+                  <Link className="nav-link " to="/pages/Bestseller">Best Seller</Link>
                 </li>
                 {/* <li className="nav-item">
                   <Link className="nav-link " to="/pages/contact">Contact us</Link>

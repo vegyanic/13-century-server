@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 import Header from '../common/head';
 import Footer from '../common/footer';
 
-const Menseye = () => {
+const bestseller = () => {
   const [products, setProducts] = useState([]);
   const [hoveredImage, setHoveredImage] = useState({});
 
   useEffect(() => {
-    const category = 'Eyewear';
-    const gender = 'Male';
+    const category = 'Eyewear'; 'Sungalsses';
+    const gender = 'Male'; 'Female';
     
 
     const fetchProducts = async () => {
@@ -115,9 +115,9 @@ const Menseye = () => {
   return (
     <>
       <Header />
-      <div className="mens-benner" style={{ backgroundImage: 'url(../files/banner_img/A7_02626.jpeg)' }}>
+      <div className="mens-benner" style={{ backgroundImage: 'url(../files/banner_img/A7_02619.jpeg)' }}>
         <div className="videoBoxInfo text-light" style={{ paddingBottom: '50px' }}>
-          <h3>Mens</h3>
+          <h3>New Arrivals</h3>
         </div>
       </div>
 
@@ -157,7 +157,7 @@ const Menseye = () => {
               <div className="card">
                 <Link className='tpimg' to={`/men/${product.model_number}`} style={{ textDecoration: 'none' }}>
                   <img
-                    src={hoveredImage[product.model_number] || `https://13-century.com/files/men/${product.model_number}/${product.variants[0]?.color}.png`}
+                    src={hoveredImage[product.model_number] || `https://13-century.com/files/${product.gender}/${product.model_number}/${product.variants[0]?.color}.png`}
                     className="card-img-top pd"
                     alt={product.model_number}
                   />
@@ -171,15 +171,15 @@ const Menseye = () => {
                         key={variant.color}
                         onMouseEnter={() => setHoveredImage((prev) => ({
                           ...prev,
-                          [product.model_number]: `https://13-century.com/files/men/${product.model_number}/${variant.color}.png`
+                          [product.model_number]: `https://13-century.com/files/${product.gender}/${product.model_number}/${variant.color}.png`
                         }))}
                         onMouseLeave={() => setHoveredImage((prev) => ({
                           ...prev,
-                          [product.model_number]: `https://13-century.com/files/men/${product.model_number}/${product.variants[0]?.color}.png`
+                          [product.model_number]: `https://13-century.com/files/${product.gender}/${product.model_number}/${product.variants[0]?.color}.png`
                         }))}
                       >
                         <img
-                          src={`https://13-century.com/files/men/${product.model_number}/${variant.color}.png`}
+                          src={`https://13-century.com/files/${product.gender}/${product.model_number}/${variant.color}.png`}
                           alt={variant.color}
                           loading='lazy'
                         />
@@ -197,4 +197,4 @@ const Menseye = () => {
   );
 };
 
-export default Menseye;
+export default bestseller;
