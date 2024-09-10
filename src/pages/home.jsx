@@ -13,22 +13,14 @@ const HomePage = ({ products }) => {
   const [hoveredImage, setHoveredImage] = useState({}); // State to track hovered image
 
   const models = {
-    '1014': ['C1', 'C2', 'C3'],
-    '1024': ['C1', 'C2', 'C3'],
-    '1025': ['C1', 'C2', 'C3'],
-    '1028': ['C1', 'C2', 'C3', 'C4'],
-    '1030': ['C1', 'C2', 'C3', 'C4', 'C5'],
-    '1031': ['C1', 'C2', 'C3', 'C4', 'C5'],
-    '1033': ['C1', 'C2', 'C3', 'C4', 'C5'],
-    '5024': ['C1', 'C2', 'C4', 'C5'],
-    '6022': ['C1', 'C3', 'C4', 'C5'],
-    '7106': ['C1', 'C3', 'C5'],
-    '8617': ['C3', 'C4', 'C5'],
-    '8620': ['C2', 'C3', 'C4', 'C5'],
-    '10004': ['C1', 'C3', 'C4', 'C5'],
-    '10006': ['C1', 'C3', 'C4', 'C5'],
-    '10007': ['C1', 'C3', 'C4', 'C5'],
-    '10010': ['C1', 'C3', 'C4', 'C5'],
+    '6351': ['C1', 'C2', 'C8'],
+    '7005': ['C1', 'C10', 'C15'],
+    '7436': ['C3', 'C4', 'C5'],
+    '7479': ['C1', 'C2', 'C4', 'C9'],
+    '8816': ['C1', 'C4', 'C5'],
+    '2170': ['C54', 'C56', 'C106'],
+    '2002': ['C1', 'C5'],
+    '6337': ['C1', 'C2', 'C35', 'C36'],
     // Add more models with their respective color codes
   };
 
@@ -45,14 +37,14 @@ const HomePage = ({ products }) => {
             <div className="videoBox">
               {/* Lazy load video with fallback image */}
               <div className="fullscreen-video-wrap">
+                <link>
                 <img
                 loading="lazy"
                 src='../files/home.jpg'
                 
                 alt='bannerimg'
                 />
-                
-                
+                </link>
               </div>
               <div className="overlay"></div>
               <div className="videoBoxInfo" style={{ paddingBottom: '50px', paddingTop: '420px' }}>
@@ -73,12 +65,15 @@ const HomePage = ({ products }) => {
             <div className="carousel-cell products-list" key={model}>
               <div className="product-item" >
                 {/* Lazy load images */}
+                <link>
                 <img
                   loading="lazy"
-                  src={hoveredImage[model] || `../files/men/${model}/${models[model][0]}.png`}
+                  src={hoveredImage[model] || `https://13-century.com/files/mens/${model}/${models[model][0]}.png`}
                   className="card-img-top"
                   alt={model}
                 />
+                </link>
+                
                 
                 <Flickity
                   className={'carousel carousel-nav'}
@@ -97,18 +92,18 @@ const HomePage = ({ products }) => {
                       onMouseEnter={() =>
                         setHoveredImage((prev) => ({
                           ...prev,
-                          [model]: `../files/men/${model}/${color}.png`,
+                          [model]: `https://13-century/files/mens/${model}/${color}.png`,
                         }))
                       }
                       onMouseLeave={() =>
                         setHoveredImage((prev) => ({
                           ...prev,
-                          [model]: `../files/men/${model}/${models[model][0]}.png`,
+                          [model]: `https://13-century/files/mens/${model}/${models[model][0]}.png`,
                         }))
                       }
                     >
                       {/* Lazy load thumbnail images */}
-                      <img loading="lazy" src={`../files/men/${model}/${color}.png`} alt={model} />
+                      <img loading="lazy" src={`https://13-century/files/mens/${model}/${color}.png`} alt={model} />
                     </div>
                   ))}
                 </Flickity>

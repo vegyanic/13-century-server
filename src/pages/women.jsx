@@ -44,6 +44,73 @@ const Womenssun = () => {
     };
 
     fetchProducts();
+
+    const updatePdcClass = () => {
+      const pdcElements = document.querySelectorAll('#pdc');
+      if (window.innerWidth < 575) {
+        pdcElements.forEach((element) => {
+          element.classList.add('col-6');
+          element.classList.remove('col-4');
+        });
+      } else {
+        pdcElements.forEach((element) => {
+          element.classList.remove('col-6');
+          element.classList.add('col-4');
+        });
+      }
+    };
+
+    const handleDesk1Click = () => {
+      document.querySelectorAll('#pdc').forEach((element) => {
+        element.classList.add('col-4');
+        element.classList.remove('col-6');
+      });
+    };
+
+    const handleDesk2Click = () => {
+      document.querySelectorAll('#pdc').forEach((element) => {
+        element.classList.remove('col-4');
+        element.classList.add('col-6');
+      });
+    };
+
+    const handleDesk3Click = () => {
+      document.querySelectorAll('#pdc').forEach((element) => {
+        element.classList.remove('col');
+        element.classList.add('col-6');
+      });
+    };
+
+    const handleDesk4Click = () => {
+      document.querySelectorAll('#pdc').forEach((element) => {
+        element.classList.remove('col-6');
+        element.classList.add('col');
+      });
+    };
+
+    const desk1Button = document.getElementById('desk1');
+    const desk2Button = document.getElementById('desk2');
+    const desk3Button = document.getElementById('desk3');
+    const desk4Button = document.getElementById('desk4');
+
+    if (desk1Button) desk1Button.addEventListener('click', handleDesk1Click);
+    if (desk2Button) desk2Button.addEventListener('click', handleDesk2Click);
+    if (desk3Button) desk3Button.addEventListener('click', handleDesk3Click);
+    if (desk4Button) desk4Button.addEventListener('click', handleDesk4Click);
+
+    updatePdcClass();
+    window.addEventListener('resize', updatePdcClass);
+
+    return () => {
+      
+    
+      if (desk1Button) desk1Button.removeEventListener('click', handleDesk1Click);
+      if (desk2Button) desk2Button.removeEventListener('click', handleDesk2Click);
+      if (desk3Button) desk3Button.removeEventListener('click', handleDesk3Click);
+      if (desk4Button) desk4Button.removeEventListener('click', handleDesk4Click);
+    
+      window.removeEventListener('resize', updatePdcClass);
+    };
   }, []);
 
   return (
